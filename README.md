@@ -1,7 +1,5 @@
 # Git Log Heatmap Generator
 
-[Git Heatmap]()
-
 A Python script that generates heatmaps visualizing commit activity by day of the week and month for Git repositories. The script processes multiple repositories, creates individual heatmaps for each repository, and generates a summary heatmap aggregating data across all repositories.
 
 ---
@@ -26,7 +24,7 @@ A Python script that generates heatmaps visualizing commit activity by day of th
 
 ## Overview
 
-This script analyzes Git commit logs to generate heatmaps that visualize the distribution of commits by day of the week and month. It supports filtering commits from the past 10 months and can process multiple repositories in a directory. Each repository gets its own heatmap, and a summary heatmap is generated to provide an overview of activity across all repositories.
+This script analyzes Git commit logs to generate heatmaps that visualize the distribution of commits by day of the week and month. It supports filtering commits from the past 12 months and can process multiple repositories in a directory. Each repository gets its own heatmap, and a summary heatmap is generated to provide an overview of activity across all repositories.
 
 ---
 
@@ -52,28 +50,34 @@ Before running the script, ensure you have the following installed:
 
 You can install the required libraries using pip:
 
-    ```bash
     pip install gitpython pandas matplotlib
-    ```
+
 
 ## Installation
 
 1. Clone this repository or download the script file (`git_log_heatmap.py`).
-2. Install the required dependencies using the command below:
+2. Create a Virtual Environment ```bash python3 -m venv myenv```
+3. Activate the Virtual Environment
+   1. On macOS/Linux: ```bash source myenv/bin/activate```
+   2. On Windows: ```bash myenv\Scripts\activate```
 
-   ```bash
+4. Install the required dependencies using the command below:
+
+```bash
    pip install gitpython pandas matplotlib
-   ```
-
+```
+5. Deactivate the Virtual Environment:
+   1. When you're done, you can deactivate the virtual environment by running:
+```bash
+   deactivate
+```
 ## Usage
 
 ### Command-Line Arguments
 
 Run the script with the following arguments:
 
-    ```bash
     python git_log_heatmap.py <repo_directory> <author_name_or_email>
-    ```
 
 - <repo_directory>: Path to the directory containing Git repositories.
 - <author_name_or_email>: Name or email of the author whose commits you want to analyze.
@@ -81,9 +85,8 @@ Run the script with the following arguments:
 ### Example
 To analyze commits made by "John Doe" in the /path/to/repos directory:
 
-    ```bash
     python git_log_heatmap.py /path/to/repos "John Doe"
-    ```
+
 ### Output
 - Individual heatmaps for each repository are saved as <repository_name>_heatmap.png.
 - A summary heatmap aggregating all repositories is saved as summary_heatmap.png.
@@ -101,7 +104,7 @@ Summary Heatmap
 Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
 
 ## License
-This project is licensed under the ![MIT License](https://opensource.org/license/mit) . Feel free to use, modify, and distribute the script as needed.
+This project is licensed under the [MIT License](https://opensource.org/license/mit) . Feel free to use, modify, and distribute the script as needed.
 
 Acknowledgments
 Thanks to the contributors of the [GitPython](https://github.com/gitpython-developers/GitPython) library for simplifying Git interactions in Python.
